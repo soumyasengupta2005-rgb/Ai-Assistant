@@ -53,7 +53,7 @@ https://jarvis-core-ai.vercel.app
 ## Local Setup
 
 ```bash
-git clone [https://github.com/soumyasengupta2005-rgb/AI-Assistant.git](https://github.com/soumyasengupta2005-rgb/Ai-Assistant.git)
+git clone (https://github.com/soumyasengupta2005-rgb/Ai-Assistant.git)
 cd AI-Assistant
 npm install
 npm run dev
