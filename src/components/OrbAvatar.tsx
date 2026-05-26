@@ -95,7 +95,7 @@ export default function OrbAvatar({ status, mood }: OrbAvatarProps) {
   const orbClass = `orb-${status}`;
 
   return (
-    <div className="relative flex flex-col items-center select-none">
+    <div className="relative flex flex-col items-center justify-center w-full max-w-[100vw] overflow-hidden px-2">
       {/* Outer ring / mood indicator */}
       <div className="relative" style={{ width: size, height: size }}>
         {/* Rotating mood ring */}
