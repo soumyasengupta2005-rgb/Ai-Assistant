@@ -70,7 +70,7 @@ export default function OrbAvatar({ status, mood }: OrbAvatarProps) {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const size = isMobile ? 180 : 300;
+  const size = isMobile ? 140 : 300;
   
   const [particles, setParticles] = useState<Particle[]>([]);
   const particleId = useRef(0);
@@ -80,8 +80,8 @@ export default function OrbAvatar({ status, mood }: OrbAvatarProps) {
       const interval = setInterval(() => {
         const newParticle: Particle = {
           id: particleId.current++,
-          x: 30 + Math.random() * 140,
-          y: 30 + Math.random() * 140,
+          x: Math.random() * size,
+          y: Math.random() * size,
           size: 4 + Math.random() * 6,
           color: ['#a78bfa', '#818cf8', '#c084fc', '#22d3ee', '#f0abfc'][Math.floor(Math.random() * 5)],
           delay: Math.random() * 0.3,
@@ -97,7 +97,15 @@ export default function OrbAvatar({ status, mood }: OrbAvatarProps) {
   return (
     <div className="relative flex flex-col items-center justify-center w-full max-w-[100vw] overflow-hidden px-2">
       {/* Outer ring / mood indicator */}
-      <div className="relative" style={{ width: size, height: size }}>
+      <div
+        className="relative flex justify-center items-center"
+        style={{
+          width: size,
+          height: size,
+          maxWidth: '90vw',
+          maxHeight: '90vw'
+        }}
+      >
         {/* Rotating mood ring */}
         <div
           className="mood-ring absolute inset-0 rounded-full"
@@ -142,7 +150,7 @@ export default function OrbAvatar({ status, mood }: OrbAvatarProps) {
               </div>
             ) : (
               <span
-                className="text-3xl font-bold text-white"
+                className="text-xl md:text-3xl font-bold text-white"
                 style={{ textShadow: `0 0 20px ${orbColor}` }}
               >
                 {colors.face}
